@@ -254,17 +254,17 @@
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{{baseUr1}}/{{dest.img}}" alt="">
+								<img src="{{baseUr1}}/{{dest.imagenCiudad}}" alt="">
 
-								{% if dest.offer %}
+								{% if dest.ofertaTour %}
 								<div class="spec_offer text-center"><a href="{% static '#' %}">Special Offer</a></div>
 								{% endif %}
 
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="{% static 'destinations.html' %}">{{dest.name}}</a></div>
-								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
-								<div class="destination_price">From ${{dest.price}}</div>
+								<div class="destination_title"><a href="{% static 'destinations.html' %}">{{dest.nombreCiudad}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.descripcionCiudad}}</p></div>
+								<div class="destination_price">From ${{dest.precioTour}}</div>
 							</div>
 						</div>
 
