@@ -4,25 +4,25 @@ from .models import Destination
 # Create your views here.
 def index(request, *args,**kwargs):
 	dest1 = Destination()
-	dest1.name='Munbai'
-	dest1.desc= 'The city that never sleeps'
-	dest1.img = 'destination_1.jpg'
-	dest1.price = 701
-	dest1.offer = False
+	dest1.nombreCiudad='Munbai'
+	dest1.descripcionCiudad= 'The city that never sleeps'
+	dest1.imagenCiudad = 'destination_1.jpg'
+	dest1.precioTour = 701
+	dest1.ofertaTour = False
 
 	dest2 = Destination()
-	dest2.name='Hiderabad'
-	dest2.desc= 'The city '
-	dest2.img = 'destination_2.jpg'
-	dest2.price = 700
-	dest2.offer = True
+	dest2.nombreCiudad='Hiderabad'
+	dest2.descripcionCiudad= 'The city '
+	dest2.imagenCiudad = 'destination_2.jpg'
+	dest2.precioTour = 700
+	dest2.ofertaTour = True
 
 	dest3 = Destination()
-	dest3.name='Bengalarub'
-	dest3.desc= 'Beatiful city '
-	dest3.img = 'destination_3.jpg'
-	dest3.price = 702
-	dest3.offer = False
+	dest3.nombreCiudad='Bengalarub'
+	dest3.descripcionCiudad= 'Beatiful city '
+	dest3.imagenCiudad = 'destination_3.jpg'
+	dest3.precioTour = 702
+	dest3.ofertaTour = False
 
 	dests =[dest1,dest2,dest3]
 	return render(request,"index.html", {'dests' : dests})
