@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,18 +7,24 @@
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<title>Registeration</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='main.css' >
+	<link rel='stylesheet' type='text/css' href="{% static 'styles/desenioFormulario.css' %}">
 	<script src='main.js'></script>
 
 </head>
 <body>
-	<form action="login" method="post">
-		{% csrf_token %}
-		<input type="text" name="username" placeholder="username"><br>
-		<input type="password" name="password" placeholder="password"><br>
-		<input type="submit">
+	<div class="login-box">
+		<h1>Login</h1>
+		<form action="login" method="post">
+			{% csrf_token %}
+			<label for="usarname">Ingrese Nombre de Usuario</label>
+			<input type="text" name="username" placeholder="username"><br>
+			<label for="password">Ingresar Password</label>
+			<input type="password" name="password" placeholder="password"><br>
+			<input type="submit">
 
-	</form>
+		</form>
+	</div>
 
 	<div>
 		{% for message in messages %}
