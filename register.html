@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,23 +7,34 @@
 	<title>Registeration</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/desenioFormulario.css' %}">
 	<script src='main.js'></script>
 </head>
 <body>
-	<form action="register" method="post">
-		{% csrf_token %}
-		<input type="text" name="first_name" placeholder="First Name" ><br>
-		<input type="text" name="last_name" placeholder="Last Name" ><br>
-		<input type="text" name="user_name" placeholder="user Name" ><br>
-		<input type="email" name="email" placeholder="email" ><br>
-		<input type="password" name="password1" placeholder="Password" ><br>
-		<input type="password" name="password2" placeholder="Confirm Password" ><br>
-		<input type="submit" >
-	</form>
+	<div class="login-box">
+		<h1>Register</h1>
+		<form action="register" method="post">
+			{% csrf_token %}
+			<label for="first_name">First Name</label>
+			<input type="text" name="first_name" placeholder="First Name" ><br>
+			<label for="last_name">Last Name</label>
+			<input type="text" name="last_name" placeholder="Last Name" ><br>
+			<label for="usarname">Username</label>
+			<input type="text" name="username" placeholder="user Name" ><br>
+			<label for="email">Email</label>
+			<input type="email" name="email" placeholder="email" ><br>
+			<label for="password1">Password</label>
+			<input type="password" name="password1" placeholder="Password" ><br>
+			<label for="password2">Repeat Password</label>
+			<input type="password" name="password2" placeholder="Confirm Password" ><br>
+			<input type="submit">
+		</form>
+	</div>
+
 	<div>
 		{% for message in messages %}
 		<h3> {{ message }}</h3>
 		{% endfor %}
 	</div>
 </body>
-</html>>
+</html>
