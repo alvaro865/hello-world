@@ -1,5 +1,5 @@
 {% load static %}
-{% static "images" as baseUr1 %}
+{% static "images" as baseUrl %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,14 +29,12 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-							<div class="logo"><a href="{% static 'index.html' %}">Travello</a></div>
+							<div class="logo"><a href="index.html">Travello</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li class="active"><a href="{% static 'index.html' %}">Home</a></li>
-									<li><a href="{% static 'about.html' %}">About us</a></li>
-									<li><a href="{% static '#' %}">Services</a></li>
-									<li><a href="{% static 'news.html' %}">News</a></li>
-									<li><a href="{% static 'contact.html' %}">Contact</a></li>
+									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="/accounts/register">Register</a></li>
 								</ul>
 							</nav>
 							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
@@ -103,7 +101,7 @@
 				
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="{% static 'background-image:url(images/home_slider.jpg)' %}"></div>
+					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -254,17 +252,17 @@
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{{baseUr1}}/{{dest.imagenCiudad}}" alt="">
+								<img src="{{dest.img.url}}" alt="">
 
-								{% if dest.ofertaTour %}
+								{% if dest.offer %}
 								<div class="spec_offer text-center"><a href="{% static '#' %}">Special Offer</a></div>
 								{% endif %}
 
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="{% static 'destinations.html' %}">{{dest.nombreCiudad}}</a></div>
-								<div class="destination_subtitle"><p>{{dest.descripcionCiudad}}</p></div>
-								<div class="destination_price">From ${{dest.precioTour}}</div>
+								<div class="destination_title"><a href="{% static 'destinations.html' %}">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+								<div class="destination_price">From ${{dest.price}}</div>
 							</div>
 						</div>
 
@@ -274,7 +272,6 @@
 
 
 						
-
 					</div>
 				</div>
 			</div>
@@ -444,7 +441,7 @@
 	<!-- Footer -->
 
 	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer_1.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/footer_1.jpg' %}" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
